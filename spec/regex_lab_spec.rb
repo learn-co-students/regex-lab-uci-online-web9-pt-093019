@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'pry'
 describe "Working with Regular expressions" do
   describe "#starts_with_a_vowel?" do
     it "returns true for words starting with a vowel" do
@@ -7,6 +7,7 @@ describe "Working with Regular expressions" do
 
       match.each do |word|
         expect(starts_with_a_vowel?(word)).to be(true)
+        #binding.pry
       end
     end
 
@@ -33,9 +34,11 @@ describe "Working with Regular expressions" do
   describe "#words_five_letters_long" do
     it "returns an array of words that are five letters long" do
       words_string = "extreme briny crepe parking snaps grouping snafu round dog be fork spoon"
+      #binding.pry
       expect(words_five_letters_long(words_string).count).to eq(6)
       expect(words_five_letters_long(words_string)).to include("snafu")
       expect(words_five_letters_long(words_string)).not_to include("fork")
+      
     end
   end
 
